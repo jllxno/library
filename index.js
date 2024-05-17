@@ -367,69 +367,72 @@ console.log(libros)
     });
 
 
-    const readline = require('readline');
+     let librxs= [];
+    function agregarLibro() {
+        let titulo = prompt("Introduce el título del libro:");
+        let autor = prompt("Introduce el autor del libro:");
+        let genero = prompt("Introduce el género del libro:");
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+    
 
-// Definición del array de libros
- libros= [];
+      let nuevoLibrx=  {
+        titulo: titulo,
+        autor: autor,
+        genero: genero,
+      }
+      librxs.push(nuevoLibrx)
+      console.log(`Se ha agregado el libro "${titulo}" a la pila.`);
+    }
+      function quitarLibro() {
+       
 
-// Función para agregar un libro a la pila
-function agregarLibro() {
-    // Aquí colocarías la lógica para agregar un libro (usando push() por ejemplo)
-    console.log("Función para agregar un libro aún no implementada.");
-}
+            mostrarLibros();
+          
+     
+            let libroQuitado = libros.pop();
+          
 
-// Función para quitar un libro del principio de la pila
-function quitarLibro() {
-    // Aquí colocarías la lógica para quitar un libro del principio de la pila (usando shift() por ejemplo)
-    console.log("Función para quitar un libro del principio de la pila aún no implementada.");
-}
-
-// Función para mostrar la pila actual de libros
-function mostrarPila() {
-    // Aquí colocarías la lógica para mostrar la pila actual de libros
-    console.log("Pila actual de libros:", libros);
-}
-
-// Función para mostrar el menú y procesar la opción seleccionada por el usuario
-function mostrarMenu() {
-    console.log("\nMenú:");
-    console.log("1. Agregar un libro");
-    console.log("2. Quitar un libro del principio de la pila");
-    console.log("3. Mostrar la pila actual de libros");
-    console.log("4. Salir");
-
-    rl.question("Selecciona una opción: ", (opcion) => {
+            console.log("Libro quitado exitosamente.");
+            console.log("Libro quitado:", libroQuitado);
+          }
+      
+      
+      function mostrarLibros() {
+        console.log("Lista de libros:");
+        libros.forEach((libro, indice) => {
+          console.log(`${indice+1}. ${libro.titulo} - ${libro.autor}`);
+        });
+      }
+      
+      function mostrarMenu() {
+        console.log("Menú:");
+        console.log("1. Agregar libro");
+        console.log("2. Quitar libro");
+        console.log("3. Mostrar libros");
+        console.log("4. Salir");
+      }
+      
+      let opcion;
+      do {
+        mostrarMenu();
+        opcion = parseInt(prompt("Introduce una opción: "));
         switch (opcion) {
-            case '1':
-                agregarLibro();
-                break;
-            case '2':
-                quitarLibro();
-                break;
-            case '3':
-                mostrarPila();
-                break;
-            case '4':
-                console.log("Saliendo del programa.");
-                rl.close();
-                break;
-            default:
-                console.log("Opción no válida. Por favor selecciona una opción válida.");
-                break;
+          case 1:
+            agregarLibro();
+            break;
+          case 2:
+            quitarLibro();
+            break;
+          case 3:
+            mostrarLibros();
+            break;
+          case 4:
+            console.log("¡Hasta luego!");
+            break;
+          default:
+            console.log("Opción no válida.");
         }
+      } while (opcion !== 4);
+    
 
-        if (opcion !== '4') {
-            mostrarMenu();
-        }
-    });
-}
-
-// Iniciar el menú
-mostrarMenu();
-
-
+    
