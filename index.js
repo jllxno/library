@@ -412,6 +412,16 @@ console.log(libros)
         console.log("4. Salir");
       }
       
+      function listarLibros() {
+        let listadx1 = libros.map(libro =>{
+          return{  titulo: libro.titulo,
+            autor: libro.autor,
+            precio: libro.precio,
+            editorial: libro.editorial };});
+          
+            console.log(listadx1);
+      }
+      
       let opcion;
       do {
         mostrarMenu();
@@ -426,85 +436,88 @@ console.log(libros)
           case 3:
             mostrarLibros();
             break;
-          case 4:
+            case 4:
+              listarLibros();
+              break;
+          case 5:
             console.log("¡Hasta luego!");
             break;
           default:
             console.log("Opción no válida.");
         }
-      } while (opcion !== 4);
+      } while (opcion !== 5);
 
 
 
 let listadx1 = libros.map(libro =>{
   return{  titulo: libro.titulo,
     autor: libro.autor,
-    precio: libro.precio };});
+    precio: libro.precio,
+    editorial: libro.editorial };});
   
-    console.log(listadx1);
+   
 
     let listadx2 = libros.map(libro =>{
       return{  titulo: libro.titulo,
         descripcion: libro.descripcion,
         isbn: libro.isbn };});
       
-        console.log(listadx2);
+    
 
         let listadx3 = libros.map(libro =>{
           return{  titulo: libro.titulo,
             estado: libro.estado,
             ubicacion: libro.ubicacion };});
           
-            console.log(listadx3);
+     
 
             let listadx4 = libros.map(libro =>{
               return{  titulo: libro.titulo,
                 paginas: libro.paginas,
                 dimensiones: libro.dimensiones };});
               
-                console.log(listadx4);
+                
 
                 let listadx5 = libros.map(libro =>{
                   return{  titulo: libro.titulo,
                     paginas: libro.paginas,
                     editorial: libro.editorial };});
                   
-                    console.log(listadx5);
+                    
 
                     let listadx6 = libros.map(libro =>{
                       return{  titulo: libro.titulo,
                         idioma: libro.idioma,
                         genero: libro.genero };});
                       
-                        console.log(listadx6);
+                     
 
                         let listadx7 = libros.map(libro =>{
                           return{  titulo: libro.titulo,
                             formato: libro.formato,
                             peso: libro.peso };});
                           
-                            console.log(listadx7);
+                          
 
                             let listadx8 = libros.map(libro =>{
                               return{  titulo: libro.titulo,
                                 peso: libro.peso,
                                 descripcion: libro.descripcion };});
                               
-                                console.log(listadx8);
+                           
 
                                 let listadx9 = libros.map(libro =>{
                                   return{  titulo: libro.titulo,
                                     idioma: libro.idioma,
                                     ubicacion: libro.ubicacion };});
                                   
-                                    console.log(listadx9);
+                                 
 
                                     let listadx10 = libros.map(libro =>{
                                       return{  titulo: libro.titulo,
                                         estado: libro.estado,
                                         isbn: libro.isbn };});
-                                      
-                                        console.log(listadx10);
+                                     
 
 
     
