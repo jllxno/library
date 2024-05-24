@@ -72,7 +72,7 @@ let libros = [
         autor: "J.K. Rowling",
         genero: "Fantasía",
         idioma: "Español",
-        precio: 24.99,
+        precio: 4.99,
         formato: "Tapa blanda",
         isbn: "9788478884454",
         descripcion: "Harry lidera un grupo de estudiantes en la lucha contra Lord Voldemort.",
@@ -89,7 +89,7 @@ let libros = [
         autor: "J.K. Rowling",
         genero: "Fantasía",
         idioma: "Español",
-        precio: 25.99,
+        precio: 5.99,
         formato: "Tapa blanda",
         isbn: "9788478884455",
         descripcion: "Harry investiga sobre el pasado de Voldemort y encuentra secretos oscuros.",
@@ -171,7 +171,7 @@ let libros = [
     autor: "J.R.R. Tolkien",
     genero: "Fantasía",
     idioma: "Español",
-    precio: 27.99,
+    precio: 7.99,
     formato: "Tapa blanda",
     isbn: "9788445000675",
     descripcion: "El enfrentamiento final con Sauron y el destino del anillo se decide.",
@@ -188,7 +188,7 @@ let libros = [
     autor: "Gabriel García Márquez",
     genero: "Realismo mágico",
     idioma: "Español",
-    precio: 19.99,
+    precio: 9.99,
     formato: "Tapa blanda",
     isbn: "9788466339844",
     descripcion: "La historia de la familia Buendía en Macondo, llena de magia y realismo.",
@@ -205,7 +205,7 @@ let libros = [
     autor: "Miguel de Cervantes",
     genero: "Novela de aventuras",
     idioma: "Español",
-    precio: 17.99,
+    precio: 7.99,
     formato: "Tapa blanda",
     isbn: "9788426105668",
     descripcion: "Las aventuras de un caballero y su escudero, buscando justicia en un mundo cambiante.",
@@ -222,7 +222,7 @@ let libros = [
     autor: "George Orwell",
     genero: "Ficción distópica",
     idioma: "Español",
-    precio: 16.99,
+    precio: 6.99,
     formato: "Tapa blanda",
     isbn: "9788420685184",
     descripcion: "Una sociedad controlada por un régimen totalitario, donde el pensamiento es castigado.",
@@ -239,7 +239,7 @@ let libros = [
     autor: "Harper Lee",
     genero: "Ficción",
     idioma: "Español",
-    precio: 18.99,
+    precio: 8.99,
     formato: "Tapa blanda",
     isbn: "9788498389237",
     descripcion: "La lucha contra el racismo en el sur de Estados Unidos, vista a través de los ojos de una niña.",
@@ -256,7 +256,7 @@ let libros = [
     autor: "Paulo Coelho",
     genero: "Ficción",
     idioma: "Español",
-    precio: 15.99,
+    precio: 5.99,
     formato: "Tapa blanda",
     isbn: "9780062315007",
     descripcion: "Un joven pastor sigue su sueño en busca de un tesoro, aprendiendo lecciones de vida en el camino.",
@@ -273,7 +273,7 @@ let libros = [
     autor: "Jane Austen",
     genero: "Novela romántica",
     idioma: "Español",
-    precio: 16.99,
+    precio: 9.99,
     formato: "Tapa blanda",
     isbn: "9788491040541",
     descripcion: "La compleja historia de amor entre Elizabeth Bennet y Mr. Darcy en la Inglaterra del siglo XIX.",
@@ -290,7 +290,7 @@ let libros = [
     autor: "Gabriel García Márquez",
     genero: "Ficción",
     idioma: "Español",
-    precio: 17.99,
+    precio: 7.99,
     formato: "Tapa blanda",
     isbn: "9788497592438",
     descripcion: "La historia de un asesinato anunciado en un pequeño pueblo caribeño y sus consecuencias.",
@@ -305,7 +305,7 @@ let libros = [
         autor: "Antoine de Saint-Exupéry",
         genero: "Fábula",
         idioma: "Español",
-        precio: 14.99,
+        precio: 7.99,
         formato: "Tapa blanda",
         isbn: "9786071132329",
         descripcion: "Las aventuras del principito y su encuentro con un piloto estrellado en el desierto.",
@@ -322,7 +322,7 @@ let libros = [
         autor: "C.S. Lewis",
         genero: "Fantasía",
         idioma: "Español",
-        precio: 19.99,
+        precio: 10.99,
         formato: "Tapa blanda",
         isbn: "9780007115617",
         descripcion: "Cuatro niños descubren un mundo mágico detrás de un armario en una casa de campo.",
@@ -565,4 +565,58 @@ let listadx1 = libros.map(libro =>{
 
 
 
+                                            const librosCaros = libros.filter(libro => libro.precio > 11);
+
+                                     
+                                            const resumenLibrosCaros = librosCaros.map(libro => {
+                                                return {
+                                                    titulo: libro.titulo,
+                                                    autor: libro.autor,
+                                                    precio: libro.precio
+                                                };
+                                            });
+                                            
+                                            console.table(resumenLibrosCaros);
     
+                                            const librosMenosDe100Paginas = libros.filter(libro => libro.paginas < 100);
+
+
+                                              const resumenLibrosMenosDe100Paginas = librosMenosDe100Paginas.map(libro => {
+                                               return {
+                                                   titulo: libro.titulo,
+                                                      autor: libro.autor,
+                                                         editorial: libro.editorial,
+                                                            paginas: libro.paginas
+                                               };
+                                                 });
+
+                                                     console.log(resumenLibrosMenosDe100Paginas);
+
+                                                     // Filtrar los libros caros (mayores a 20 dólares)
+                                                            const librosCarosMayoresA20 = libros.filter(libro => libro.precio > 20);
+
+                                                          librosCarosMayoresA20.sort((a, b) => b.precio - a.precio);
+
+                                                          const resumenLibrosCarxs = librosCarosMayoresA20.map(libro => {
+                                                                       return {
+                                                                        titulo: libro.titulo,
+                                                              autor: libro.autor,
+                                                              precio: libro.precio
+                                                                              };
+                                                                          });
+
+                                                                          console.log(resumenLibrosCarxs);
+
+
+                                                 const librosOrdenadosPorPaginas = libros.sort((a, b) => b.paginas - a.paginas);
+                                                  
+                                                    const resumxnLibros = librosOrdenadosPorPaginas.map(libro => {
+                                                        return {
+                                                            titulo: libro.titulo,
+                                                            autor: libro.autor,
+                                                            editorial: libro.editorial,
+                                                            paginas: libro.paginas
+                                                        };
+                                                    });
+
+                                                    console.log(resumxnLibros);
