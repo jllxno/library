@@ -533,17 +533,32 @@ let listadx1 = libros.map(libro =>{
 
                                               console.table(librosMasCaros);
                                      
-                         
+                                              const librosmaxpaginas=libros.map(libros=>{
+                                                return {
+                                                  titulo: libros.titulo,
+                                                   autor: libros.autor,
+                                                   editorial:libros.editorial,
+                                                  paginas:libros.paginas
+                                              }})
+                                              .filter(libros=>{
+                                                return libros.paginas > 500
+                                              })
+                                              .sort((a,b)=>b.paginas-a.paginas)
+                                              console.table(librosmaxpaginas)
 
 
+
+
+                                              
                                   
+
+                                              
                                             const librosmaspaginasorganizado=libros.map(libros=>{
                                               return {
                                                 titulo: libros.titulo,
-                                                 autor: libros.autor,
-                                                 editorial:libros.editorial,
-                                                paginas:libros.paginas
+                                             
                                             }})
+
                                             .sort((a,b )=> b.paginas-a.paginas);
                                         
                                             console.table(librosmaspaginasorganizado)
