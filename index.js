@@ -517,6 +517,15 @@ let listadx1 = libros.map(libro =>{
                                       return{  titulo: libro.titulo,
                                         estado: libro.estado,
                                         isbn: libro.isbn };});
+
+                                        const librosConDescuento = libros.map(libro => ({
+                                          titulo: libro.titulo,
+                                          autor: libro.autor,
+                                          editorial: libro.editorial,
+                                          precio: libro.precio,
+                                          descuento: libro.precio * 0.2
+                                        }));
+                                        console.log(librosConDescuento);
                                      
 
 
