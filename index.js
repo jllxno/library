@@ -145,6 +145,7 @@ let libros = [
         isbn: "9788445000667",
         descripcion: "Un grupo de personajes se embarca en una búsqueda para destruir un anillo poderoso.",
         estado: "Nuevo",
+        paginas: 540,
         ubicacion:"Axm"},
 
 
@@ -296,6 +297,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Librería García",
     fecha_publicacion: "7 de noviembre de 1981",
+    paginas: 426,
     editorial:"axm" },
 
     {
@@ -526,7 +528,26 @@ let listadx1 = libros.map(libro =>{
                                           descuento: libro.precio * 0.2
                                         }));
                                         console.log(librosConDescuento);
+
+                                        const librosMasCaros = libros.filter(libro => libro.precio > 50);
+
+                                              console.table(librosMasCaros);
                                      
+                         
+
+
+                                  
+                                            const librosmaspaginasorganizado=libros.map(libros=>{
+                                              return {
+                                                titulo: libros.titulo,
+                                                 autor: libros.autor,
+                                                 editorial:libros.editorial,
+                                                paginas:libros.paginas
+                                            }})
+                                            .sort((a,b )=> b.paginas-a.paginas);
+                                        
+                                            console.table(librosmaspaginasorganizado)
+
 
 
     
