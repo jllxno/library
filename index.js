@@ -726,7 +726,6 @@ break
       return libro.fechaDePublicacion == librobuscar2;
     });
     console.table(algunlibro2);  
-  
   }
 
   function buscarlibrogenero(){
